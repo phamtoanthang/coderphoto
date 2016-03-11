@@ -8,6 +8,8 @@ source 'https://rails-assets.org' do
 end
 #Pagination
 gem 'kaminari'
+#Instagram
+gem 'instagram'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.2'
