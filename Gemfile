@@ -10,6 +10,8 @@ end
 gem 'kaminari'
 #Instagram
 gem 'instagram'
+#upload file
+gem 'carrierwave'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.2'

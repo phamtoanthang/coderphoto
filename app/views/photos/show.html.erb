@@ -5,25 +5,12 @@
   <%= @photo.username %>
 </p>
 
-<p>
-  <strong>String:</strong>
-  <%= @photo.string %>
-</p>
 
 <p>
   <strong>Caption:</strong>
   <%= @photo.caption %>
 </p>
 
-<p>
-  <strong>Text:</strong>
-  <%= @photo.text %>
-</p>
-
-<p>
-  <strong>Created at:</strong>
-  <%= @photo.created_at %>
-</p>
 
 <p>
   <strong>Datetime:</strong>
@@ -36,18 +23,13 @@
 </p>
 
 <p>
-  <strong>Integer:</strong>
-  <%= @photo.integer %>
-</p>
-
-<p>
   <strong>Url:</strong>
   <%= @photo.url %>
 </p>
 
 <p>
-  <strong>String:</strong>
-  <%= @photo.string %>
+  <strong>Attachment:</strong>
+  <%= image_tag(@photo.attachment_url) %>
 </p>
 
 <h2>Comments</h2>
