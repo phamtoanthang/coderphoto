@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @photo.username %>
+</p>
+
+<p>
+  <strong>String:</strong>
+  <%= @photo.string %>
+</p>
+
+<p>
+  <strong>Caption:</strong>
+  <%= @photo.caption %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @photo.text %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @photo.created_at %>
+</p>
+
+<p>
+  <strong>Datetime:</strong>
+  <%= @photo.datetime %>
+</p>
+
+<p>
+  <strong>Likes count:</strong>
+  <%= @photo.likes_count %>
+</p>
+
+<p>
+  <strong>Integer:</strong>
+  <%= @photo.integer %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @photo.url %>
+</p>
+
+<p>
+  <strong>String:</strong>
+  <%= @photo.string %>
+</p>
+
+<h2>Comments</h2>
+<% @photo.comments.each do |comment| %>
+  <p>
+    <%= comment.body %>
+  </p>
+<% end %>
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>

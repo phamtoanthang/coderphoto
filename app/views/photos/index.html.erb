@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Photos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>String</th>
+      <th>Caption</th>
+      <th>Text</th>
+      <th>Created at</th>
+      <th>Datetime</th>
+      <th>Likes count</th>
+      <th>Integer</th>
+      <th>Url</th>
+      <th>String</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @photos.each do |photo| %>
+      <tr>
+        <td><%= photo.username %></td>
+        <td><%= photo.string %></td>
+        <td><%= photo.caption %></td>
+        <td><%= photo.text %></td>
+        <td><%= photo.created_at %></td>
+        <td><%= photo.datetime %></td>
+        <td><%= photo.likes_count %></td>
+        <td><%= photo.integer %></td>
+        <td><%= image_tag(photo.url) %></td>
+        <td><%= photo.string %></td>
+        <td><%= link_to 'Show', photo %></td>
+        <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
+        <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @photos %>
+
+<br>
+
+<%= link_to 'New Photo', new_photo_path %>
