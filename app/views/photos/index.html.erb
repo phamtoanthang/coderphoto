@@ -1,38 +1,8 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Listing Photos</h1>
+<%= render 'photo' %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Username</th>
-      <th>Caption</th>
-      <th>Datetime</th>
-      <th>Likes count</th>
-      <th>Url</th>
-      <th>Attachment</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @photos.each do |photo| %>
-      <tr>
-        <td><%= photo.username %></td>
-        <td><%= photo.caption %></td>
-        <td><%= photo.datetime %></td>
-        <td><%= photo.likes_count %></td>
-        <td><%= image_tag(photo.url) %></td>
-        <td><%= photo.attachment_url %></td>
-        <td><%= link_to 'Show', photo %></td>
-        <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
-        <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 <%= paginate @photos %>
 
 <br>
 
-<%= link_to 'New Photo', new_photo_path %>
+<%= link_to 'New Photo', new_photo_path, class: "btn btn-primary btn-lg" %>

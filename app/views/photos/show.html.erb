@@ -1,36 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Username:</strong>
-  <%= @photo.username %>
-</p>
-
-
-<p>
-  <strong>Caption:</strong>
-  <%= @photo.caption %>
-</p>
-
-
-<p>
-  <strong>Datetime:</strong>
-  <%= @photo.datetime %>
-</p>
-
-<p>
-  <strong>Likes count:</strong>
-  <%= @photo.likes_count %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @photo.url %>
-</p>
-
-<p>
-  <strong>Attachment:</strong>
-  <%= image_tag(@photo.attachment_url) %>
-</p>
+<div class="card">
+    <img class="card-img-top"><%= @photo.url.present? ? image_tag(@photo.url) : image_tag(@photo.attachment_url) %></img>
+    <div class="card-block">
+      <h4 class="card-title"><%= @photo.caption %></h4>
+      <%= link_to 'Edit', edit_photo_path(@photo), class: "btn btn-primary" %>
+      <%= link_to 'Destroy', @photo, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+    </div>
+</div>
 
 <h2>Comments</h2>
 <% @photo.comments.each do |comment| %>
